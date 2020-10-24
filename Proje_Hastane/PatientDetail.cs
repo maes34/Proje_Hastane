@@ -108,7 +108,6 @@ namespace Proje_Hastane
             this.Hide();
             Loging lgn = new Loging();
             lgn.Show();
-            lgn.Show();
         }
         
     }
