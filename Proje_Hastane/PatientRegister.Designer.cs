@@ -206,6 +206,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MaximizeBox = false;
             this.Name = "PatientRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yeni Hasta Kaydı";
             this.Load += new System.EventHandler(this.PatientRegister_Load);
             this.ResumeLayout(false);

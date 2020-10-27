@@ -178,6 +178,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MinimizeBox = false;
             this.Name = "DoctorİnformationEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doktor Bilgi Güncelleme";
             this.Load += new System.EventHandler(this.DoctorİnformationEdit_Load);
             this.ResumeLayout(false);

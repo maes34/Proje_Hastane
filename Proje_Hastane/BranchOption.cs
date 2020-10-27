@@ -18,12 +18,16 @@ namespace Proje_Hastane
             InitializeComponent();
         }
         sqlcon bgl = new sqlcon();
-        private void BranchOption_Load(object sender, EventArgs e)
+        void branch()
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter("Select * From Tbl_Branch", bgl.baglanti());
-            da.Fill (dt);
+            da.Fill(dt);
             dataGridView1.DataSource = dt;
+        }
+        private void BranchOption_Load(object sender, EventArgs e)
+        {
+            branch();
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -33,6 +37,7 @@ namespace Proje_Hastane
             komut.ExecuteNonQuery();
             bgl.baglanti().Close();
             MessageBox.Show("Başarıyla Eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            branch();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -51,6 +56,7 @@ namespace Proje_Hastane
             guncelle.ExecuteNonQuery();
             bgl.baglanti().Close();
             MessageBox.Show("Başarıyla Güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            branch();
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -60,6 +66,7 @@ namespace Proje_Hastane
             delete.ExecuteNonQuery();
             bgl.baglanti().Close();
             MessageBox.Show("Branş Silindi");
+            branch();
         }
     }
 }

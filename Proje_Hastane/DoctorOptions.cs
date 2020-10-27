@@ -18,12 +18,16 @@ namespace Proje_Hastane
             InitializeComponent();
         }
         sqlcon bgl = new sqlcon();
-        private void DoctorOptions_Load(object sender, EventArgs e)
+        void doctors()
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter("Select * From Tbl_Doctors", bgl.baglanti());
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+        }
+        private void DoctorOptions_Load(object sender, EventArgs e)
+        {
+            doctors();
 
             //Branş Listesi
             SqlCommand brans = new SqlCommand("Select branchad From Tbl_Branch", bgl.baglanti());
@@ -47,6 +51,7 @@ namespace Proje_Hastane
             komut.ExecuteNonQuery();
             bgl.baglanti().Close();
             MessageBox.Show("Doktor Eklendi","Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            doctors();
 
         }
 
@@ -67,6 +72,7 @@ namespace Proje_Hastane
             komut.ExecuteNonQuery();
             bgl.baglanti().Close();
             MessageBox.Show("Kayıt Silindi","Uyarı!!!",MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            doctors();
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)
@@ -80,6 +86,7 @@ namespace Proje_Hastane
             komut.ExecuteNonQuery();
             bgl.baglanti().Close();
             MessageBox.Show("Doktor Güncellendi", "Bilgi", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            doctors();
 
         }
 

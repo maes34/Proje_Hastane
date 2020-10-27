@@ -203,6 +203,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MaximizeBox = false;
             this.Name = "PatientDetailEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hasta Bilgi Güncelleme";
             this.Load += new System.EventHandler(this.PatientDetailEdit_Load);
             this.ResumeLayout(false);

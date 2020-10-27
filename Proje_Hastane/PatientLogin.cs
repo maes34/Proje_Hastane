@@ -42,17 +42,12 @@ namespace Proje_Hastane
             }
             bgl.baglanti().Close();
         }
-
-        private void label4_Click(object sender, EventArgs e)
+        
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             Loging lgn = new Loging();
             lgn.Show();
             this.Hide();
-        }
-
-        private void PatientLogin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

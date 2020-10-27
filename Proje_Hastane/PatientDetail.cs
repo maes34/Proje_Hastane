@@ -21,7 +21,13 @@ namespace Proje_Hastane
         public string tc;
 
         sqlcon bgl = new sqlcon();
-        
+        void rgecmis()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("Select * From Tbl_Appointment where ptc=" + tc, bgl.baglanti());
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
         private void PatientDetail_Load(object sender, EventArgs e)
         {
 
@@ -37,10 +43,7 @@ namespace Proje_Hastane
             bgl.baglanti().Close();
 
             //Randevu Geçmişi
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("Select * From Tbl_Appointment where ptc=" + tc, bgl.baglanti());
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
+            rgecmis();
 
             //Branşları Çekme
             SqlCommand komut2 = new SqlCommand("Select branchad From Tbl_Branch", bgl.baglanti());
@@ -101,6 +104,7 @@ namespace Proje_Hastane
             komut.ExecuteNonQuery();
             bgl.baglanti().Close();
             MessageBox.Show("Randevu Alındı", "Uyarı",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            rgecmis();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -109,6 +113,6 @@ namespace Proje_Hastane
             Loging lgn = new Loging();
             lgn.Show();
         }
-        
+
     }
 }

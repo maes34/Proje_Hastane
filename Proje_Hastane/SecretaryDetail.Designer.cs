@@ -434,6 +434,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MaximizeBox = false;
             this.Name = "SecretaryDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personel Kontrol Paneli";
             this.Load += new System.EventHandler(this.SecretaryDetail_Load);
             this.groupBox1.ResumeLayout(false);
